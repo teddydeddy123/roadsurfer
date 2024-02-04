@@ -91,7 +91,7 @@ export const AutocompleteInput = () => {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    const diffInMilliseconds = Math.abs(end - start);
+    const diffInMilliseconds: number = Math.abs(end.getTime() - start.getTime());
 
     const days = Math.floor(diffInMilliseconds / (24 * 60 * 60 * 1000));
 
@@ -140,7 +140,7 @@ export const AutocompleteInput = () => {
         )}
       </InputWrapper>
       <Calendar>
-        <button onClick={handlePrevWeek}>previous</button>
+        <button onClick={handlePrevWeek}>{'<'}</button>
 
         <Grid>
           {Array.from({ length: 7 }).map((_, index) => {
@@ -186,7 +186,7 @@ export const AutocompleteInput = () => {
             );
           })}
         </Grid>
-        <button onClick={handleNextWeek}>next</button>
+        <button onClick={handleNextWeek}>{'>'}</button>
       </Calendar>
       <ModalComponent
         open={modal}
