@@ -140,7 +140,7 @@ export const AutocompleteInput = () => {
         )}
       </InputWrapper>
       <Calendar>
-        <button onClick={handlePrevWeek}>{'<'}</button>
+        <button onClick={handlePrevWeek}>previous</button>
 
         <Grid>
           {Array.from({ length: 7 }).map((_, index) => {
@@ -186,7 +186,7 @@ export const AutocompleteInput = () => {
             );
           })}
         </Grid>
-        <button onClick={handleNextWeek}>{'>'}</button>
+        <button onClick={handleNextWeek}>next</button>
       </Calendar>
       <ModalComponent
         open={modal}
